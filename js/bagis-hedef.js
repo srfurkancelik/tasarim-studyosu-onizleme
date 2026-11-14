@@ -152,6 +152,15 @@
     else toast('Hedef bağlantısı kapatıldı');
   };
 
+  // başka cihazdan defter değişikliği gelince açık pencereyi tazele
+  window.addEventListener('ts-ortak', (e) => {
+    const k = (e.detail && e.detail.keys) || [];
+    if (!k.includes('ts_donors') && !k.includes(KEY)) return;
+    const q = $('#dnQ');
+    if (q) q.dispatchEvent(new Event('input', { bubbles: true }));
+    seritYenile();
+  });
+
   BH.kur = sar;
   window.BagisHedef = BH;
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', sar); else sar();

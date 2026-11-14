@@ -179,7 +179,17 @@
     if (p === 'restore-json') return restoreJson(body.backup || {});
     if (p === 'fontlib') return { family: body.family, faces: [] };
     if (p === 'test-ai') return { ok: false, message: 'Telefon önizlemesinde yapay zeka bağlı değil.' };
-    if (p === 'generate') sunucuGerek('Yazarak hazırlama');
+    if (p === 'generate') {
+      // yerel motor (yerel-motor.js): server.py'deki motorun birebir JavaScript karşılığı
+      if (!window.YerelMotor) sunucuGerek('Yazarak hazırlama');
+      const yeniden = /(benzer|çok değiştirme|profesyonel|yeniden tasarla|güzelleştir|modernleştir|yenile|taslak|aynı kals|bu (tasarım|çalışma|etiket|afiş|görsel|ambalaj)|çalışmayı|etiketi)/;
+      if (body.reference && (body.mode === 'redesign' || yeniden.test(String(body.prompt || '').toLowerCase())))
+        throw new Error('Yeniden tasarım için yapay zeka gerekiyor (taslaktaki yazıların okunması lazım); bilgisayardaki Stüdyo’da dene.');
+      const b = await K.get('brand', null);
+      const brand = body.useBrand !== false && b && b.enabled ? b : null;
+      const [designs, reply] = window.YerelMotor.generate(String(body.prompt || ''), body.design || null, body.palette || [], body.reference || null, body.count || 1, brand);
+      return { design: designs[0], designs, reply, provider: 'local', note: null };
+    }
     if (['image-gen', 'test-image', 'ai-text', 'product-id', 'font-match', 'label-check', 'decompose', 'detect-text', 'layer-command', 'social-pack'].includes(p)) sunucuGerek('Yapay zeka özellikleri');
     if (['parse-table', 'table-template', 'adapt'].includes(p)) sunucuGerek('Bu işlem');
     if (['restore', 'backup-now', 'stock-get', 'users', 'login', 'logout', 'setup-admin', 'update'].includes(p)) sunucuGerek('Bu işlem');
