@@ -2354,3 +2354,4 @@ html[data-theme="light"] .page-marka h1.h-display, html[data-theme="light"] .pag
 .kp-s-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
 .kp-url{color:var(--cyan);font-size:12.5px;word-break:break-all}
 .kp-s-d{display:flex;gap:6px;flex-wrap:wrap}
+.kp-s-d a{text-decoration:none}

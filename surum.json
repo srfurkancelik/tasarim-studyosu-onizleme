@@ -1,12 +1,12 @@
 {
- "surum": "7.0",
+ "surum": "7.1",
  "tarih": "2026-11-14",
  "notlar": [
-  "Bağışçı defteri artık bilgisayarda (sunucuda) duruyor",
-  "Bağış raporu",
-  "Telefon önizlemesi",
-  "iPhone uygulaması",
-  "Windows"
+  "Kampanya sayfası",
+  "Makbuzu WhatsApp'tan gönder",
+  "Yeni sürüm bildirimi",
+  "Hazır paket",
+  "Arka planda"
  ],
  "indir": "https://github.com/srfurkancelik/tasarim-studyosu/releases/latest"
 }

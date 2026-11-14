@@ -111,6 +111,7 @@
               toplanan: def ? defterden().toplam : $('#kpTop', box).value, adet: def ? defterden().adet : undefined,
               renk: brand && brand.colors && brand.colors[0], logo: brand && brand.logo && brand.logo.length < 300000 ? brand.logo : undefined,
               gorsel: $('#kpGor', box) && $('#kpGor', box).checked && t && t.thumb ? t.thumb : undefined,
+              tasarim: t ? t.id : undefined,  // yalnız bu cihazda: otomatik güncellemede görseli tazelemek için (sayfaya gitmez)
               slug: son.slug && son.baslik === $('#kpBas', box).value.trim() ? son.slug : undefined,
               oto: $('#kpOto', box).checked,
             };
@@ -145,8 +146,11 @@
     clearTimeout(bekleyen);
     bekleyen = setTimeout(async () => {
       const d2 = defterden(); if (!d2) return;
+      const yeni = Object.assign({}, k, { toplanan: d2.toplam, adet: d2.adet });
+      // tasarımın görseli de güncel rakamı göstersin (defter bağlantısı tasarımı zaten güncelledi)
+      if (k.gorsel && k.tasarim) { try { const d = await A().api('projects/' + k.tasarim); if (d && d.thumb) yeni.gorsel = d.thumb; } catch (e) {} }
       try {
-        const r = await A().api('kampanya', { body: { action: 'yayinla', kampanya: Object.assign({}, k, { toplanan: d2.toplam, adet: d2.adet }) } });
+        const r = await A().api('kampanya', { body: { action: 'yayinla', kampanya: yeni } });
         K.sonYayin[k.slug] = { t: Date.now(), toplanan: r.kampanya.toplanan };
       } catch (e) { /* internet yoksa bir sonraki değişiklikte yeniden denenir */ }
     }, bekle);
