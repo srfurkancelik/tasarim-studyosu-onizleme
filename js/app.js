@@ -415,6 +415,7 @@
         <button class="qt" data-cat="bagis" data-qt="p12:goalAll">${icon('goal')}<span><b>Hedefleri güncelle</b><small>bütün bağış takibi tasarımları birlikte</small></span></button>
         <button class="qt" data-cat="bagis sosyal" data-qt="p12:result">${icon('goal')}<span><b>Kampanya sonuç kartı</b><small>“hedefimize ulaştık” teşekkürü</small></span></button>
         <button class="qt" data-cat="namaz bagis" data-qt="p12:greetTexts">${icon('chat')}<span><b>Bayram ve kandil mesajları</b><small>herkese adıyla WhatsApp metni</small></span></button>
+        <button class="qt" data-cat="pop bagis sosyal" data-qt="p12:campaignPage">${icon('globe')}<span><b>Kampanya sayfası</b><small>Bağışçılar karekodla hedefi canlı görsün</small></span></button>
         <button class="qt" data-cat="bagis" data-qt="p12:donorReport">${icon('chart')}<span><b>Bağış raporu</b><small>Aylık, yıllık özet · Excel ve PDF</small></span></button>
         <button class="qt" data-cat="pop bagis sosyal" data-qt="p12:sendLists">${icon('send')}<span><b>Gönderim listeleri</b><small>WhatsApp'ta kişi kişi gönder, kaldığın yerden sürdür</small></span></button>
         <button class="qt" data-cat="sosyal belge" data-qt="p12:invite">${icon('calendar')}<span><b>Davetiye ve katılım kodu</b><small>iftar, mevlid programı · karekodla “Katılıyorum”</small></span></button>

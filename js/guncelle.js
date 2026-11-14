@@ -109,6 +109,7 @@
         <button class="btn sm primary" id="gnPick">${icon('upload')}Yeni sürümü yükle (.zip)</button>
         ${info.previous ? `<button class="btn sm" id="gnBack">${icon('undo')}Önceki sürüme dön (v${esc(info.previous)})</button>` : ''}
       </div>
+      <div class="gn-yeni" id="gnYeni"></div>
       <input type="file" id="gnFile" accept=".zip,application/zip" hidden>
       <div class="gn-drop muted">ya da zip dosyasını buraya sürükle</div>`;
     const after = page.querySelector('#setLook');
@@ -117,6 +118,7 @@
     const inp = sec.querySelector('#gnFile');
     sec.querySelector('#gnPick').onclick = () => inp.click();
     inp.onchange = () => { const f = inp.files && inp.files[0]; inp.value = ''; G.install(f); };
+    G.kontrol(false).then((k) => yeniSatir(sec.querySelector('#gnYeni'), k));
     const back = sec.querySelector('#gnBack');
     if (back) back.onclick = () => G.rollback(info.previous);
     const drop = sec.querySelector('.gn-drop');
@@ -124,6 +126,41 @@
     ['dragleave', 'drop'].forEach((ev) => sec.addEventListener(ev, (e) => { e.preventDefault(); e.stopPropagation(); drop.classList.remove('on'); }));
     sec.addEventListener('drop', (e) => { const f = e.dataTransfer && e.dataTransfer.files[0]; if (f) G.install(f); });
   };
+
+  // ---- yeni sürüm bildirimi (sunucu yayımlanan surum.json'a bakar)
+  G.kontrol = function (zorla) {
+    return fetch('/api/update-check' + (zorla ? '?force=1' : ''), { headers: headers(), cache: 'no-store' })
+      .then((r) => r.json()).catch(() => null);
+  };
+  function notlarHTML(k) {
+    return (k.notes || []).length ? `<ul class="gn-not">${k.notes.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>` : '';
+  }
+  function yeniSatir(el, k) {
+    if (!el) return;
+    if (!k || k.error) { el.innerHTML = `<span class="muted">Yeni sürüm denetlenemedi${k && k.error ? '' : ''} (internet yok olabilir). <a href="#" data-gn-k>Tekrar dene</a></span>`; }
+    else if (k.newer) {
+      el.innerHTML = `<div class="gn-var"><b>Yeni sürüm hazır: v${esc(k.latest)}</b>${k.date ? ` <small>${esc(k.date.split('-').reverse().join('.'))}</small>` : ''}${notlarHTML(k)}
+        <p class="muted" style="font-size:12.5px;margin:6px 0 8px">Zip'i indir, sonra yukarıdaki “Yeni sürümü yükle” ile seç.</p>
+        ${k.url ? `<a class="btn sm primary" href="${esc(k.url)}" target="_blank" rel="noopener">${icon('download')}Sürüm sayfasını aç</a>` : ''}</div>`;
+    } else el.innerHTML = `<span class="muted">✓ Güncel sürümü kullanıyorsun (v${esc(k.current)}). <a href="#" data-gn-k>Şimdi denetle</a></span>`;
+    const a = el.querySelector('[data-gn-k]');
+    if (a) a.onclick = (e) => { e.preventDefault(); el.innerHTML = '<span class="muted">Denetleniyor…</span>'; G.kontrol(true).then((x) => yeniSatir(el, x)); };
+  }
+  G.bildirim = async function () {
+    if (window.TS_CLOUD) return;
+    const k = await G.kontrol(false);
+    if (!k || !k.newer) return;
+    let kapali = '';
+    try { kapali = localStorage.getItem('ts_gn_kapali') || ''; } catch (e) {}
+    if (kapali === k.latest || document.querySelector('.gn-bant')) return;
+    const b = document.createElement('div');
+    b.className = 'gn-bant';
+    b.innerHTML = `<span class="gn-bant-ic">${icon('download')}</span><span class="gn-bant-t"><b>Yeni sürüm hazır: v${esc(k.latest)}</b><small>${esc((k.notes || []).slice(0, 2).join(' · '))}</small></span><button class="btn sm primary" data-a="git">Neler yeni</button><button class="gn-bant-x" data-a="x" aria-label="Kapat">×</button>`;
+    document.body.appendChild(b);
+    b.querySelector('[data-a="x"]').onclick = () => { try { localStorage.setItem('ts_gn_kapali', k.latest); } catch (e) {} b.remove(); };
+    b.querySelector('[data-a="git"]').onclick = () => { b.remove(); location.hash = '#/ayarlar'; setTimeout(() => { const c = document.querySelector('.gn-card'); if (c) c.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 700); };
+  };
+  if (!window.TS_CLOUD) setTimeout(() => { G.bildirim().catch(() => {}); }, 4000);
 
   window.Guncelle = G;
 })();

@@ -109,6 +109,7 @@
       if (p === 'info') return { port: 0, ips: [], https: false, urls: [], https_urls: [] };
       if (p === 'users') return [];
       if (p === 'backup-json') return backupJson();
+      if (p === 'kampanya') sunucuGerek('Kampanya sayfası yayını');
       if (seg[0] === 'job') throw new Error('İş bulunamadı');
       throw new Error('Önizlemede yok: ' + p);
     }
@@ -178,6 +179,7 @@
     }
     if (p === 'restore-json') return restoreJson(body.backup || {});
     if (p === 'fontlib') return { family: body.family, faces: [] };
+    if (p === 'kampanya') sunucuGerek('Kampanya sayfası yayını');
     if (p === 'test-ai') return { ok: false, message: 'Telefon önizlemesinde yapay zeka bağlı değil.' };
     if (p === 'generate') {
       // yerel motor (yerel-motor.js): server.py'deki motorun birebir JavaScript karşılığı

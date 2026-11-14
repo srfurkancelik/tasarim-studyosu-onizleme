@@ -12,7 +12,7 @@
   if (window.TS_CLOUD) return;  // telefon önizlemesi: veriler yalnız o cihazda
   const KEYS = new Set(['ts_donors', 'ts_send_lists', 'ts_goal_link', 'ts_goal_link_birim', 'ts_kurban_list', 'ts_kurban_yer',
     'ts_mk_no', 'ts_mk_cur', 'ts_plan', 'ts_plan_note', 'ts_shares', 'ts_invite', 'ts_product',
-    'ts_vakit', 'ts_hijri_over', 'ts_weekly_auto', 'ts_weekly_done']);
+    'ts_vakit', 'ts_hijri_over', 'ts_weekly_auto', 'ts_weekly_done', 'ts_kampanya_oto']);
   const REV = 'ts__rev:', DIRTY = 'ts__kirli';
   const P = Storage.prototype, oset = P.setItem, oget = P.getItem, orem = P.removeItem;
   const ls = window.localStorage;

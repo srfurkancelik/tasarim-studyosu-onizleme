@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bağış kampanyası</title>
+<meta name="theme-color" content="#0F1115">
+<style>
+  :root { --a: #E2197C; --bg: #F6F4EF; --kart: #FFFFFF; --yazi: #15171C; --soluk: #6B6F7A; --cizgi: #E7E3DA; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--yazi); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+  main { max-width: 560px; margin: 0 auto; padding: calc(env(safe-area-inset-top, 0px) + 18px) 16px calc(env(safe-area-inset-bottom, 0px) + 28px); }
+  .kurum { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; color: var(--soluk); margin-bottom: 14px; }
+  .kurum img { width: 34px; height: 34px; object-fit: contain; border-radius: 8px; background: #fff; }
+  .kart { background: var(--kart); border-radius: 22px; padding: 20px; box-shadow: 0 1px 0 var(--cizgi), 0 10px 30px rgba(20, 20, 30, .06); }
+  .gorsel { width: 100%; border-radius: 16px; display: block; margin-bottom: 16px; background: #eee; }
+  h1 { font-size: 26px; line-height: 1.2; margin: 0 0 14px; letter-spacing: -.01em; }
+  .rakam { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .rakam b { font-size: 42px; line-height: 1; letter-spacing: -.02em; color: var(--a); font-variant-numeric: tabular-nums; }
+  .rakam span { color: var(--soluk); font-size: 16px; }
+  .bar { height: 14px; border-radius: 99px; background: #EFEBE3; overflow: hidden; margin: 14px 0 10px; }
+  .bar i { display: block; height: 100%; width: 0; border-radius: 99px; background: var(--a); transition: width 1.2s cubic-bezier(.2, .8, .2, 1); }
+  .alt { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; color: var(--soluk); }
+  .alt b { color: var(--yazi); }
+  .aciklama { margin: 18px 0 0; white-space: pre-line; }
+  .bilgi { margin-top: 14px; display: grid; gap: 10px; }
+  .satir { display: flex; align-items: center; gap: 10px; background: var(--kart); border-radius: 16px; padding: 14px 16px; box-shadow: 0 1px 0 var(--cizgi); }
+  .satir .e { font-size: 12px; color: var(--soluk); display: block; }
+  .satir .d { font-weight: 650; word-break: break-all; }
+  .satir > div { flex: 1; min-width: 0; }
+  button, .dugme { appearance: none; border: 0; border-radius: 12px; padding: 10px 14px; font: 600 14px/1 inherit; background: #F0EDE6; color: var(--yazi); cursor: pointer; text-decoration: none; white-space: nowrap; }
+  .ana { display: block; width: 100%; margin-top: 16px; padding: 15px; font-size: 16px; background: var(--a); color: #fff; text-align: center; border-radius: 14px; }
+  .not { margin-top: 18px; text-align: center; font-size: 12.5px; color: var(--soluk); }
+  .bos { text-align: center; padding: 60px 10px; color: var(--soluk); }
+  .tamam { display: inline-block; margin-top: 8px; padding: 4px 10px; border-radius: 99px; background: rgba(24, 180, 123, .14); color: #12865C; font-weight: 700; font-size: 13px; }
+  .toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 22px); transform: translate(-50%, 20px); opacity: 0; background: #15171C; color: #fff; padding: 10px 16px; border-radius: 12px; font-size: 14px; transition: .25s; pointer-events: none; }
+  .toast.on { opacity: 1; transform: translate(-50%, 0); }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0F1115; --kart: #181B21; --yazi: #F1F2F5; --soluk: #9AA0AC; --cizgi: #262A32; }
+    .bar { background: #262A32; } button, .dugme { background: #262A32; }
+  }
+</style>
+</head>
+<body>
+<main id="m"><div class="bos">Yükleniyor…</div></main>
+<div class="toast" id="t"></div>
+<script>
+(function () {
+  'use strict';
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmt = (n) => Number(n || 0).toLocaleString('tr-TR', { maximumFractionDigits: 0 });
+  const slug = () => decodeURIComponent((location.hash || '').replace(/^#/, '')).replace(/[^a-z0-9-]/g, '');
+  let son = null;
+
+  function toast(m) { const t = $('#t'); t.textContent = m; t.classList.add('on'); clearTimeout(toast.z); toast.z = setTimeout(() => t.classList.remove('on'), 1800); }
+  async function kopyala(v, m) {
+    try { await navigator.clipboard.writeText(v); toast(m || 'Kopyalandı'); }
+    catch (e) { const a = document.createElement('textarea'); a.value = v; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); toast(m || 'Kopyalandı'); } catch (er) {} a.remove(); }
+  }
+  function kalanGun(bitis) {
+    if (!bitis) return null;
+    const b = new Date(bitis + 'T23:59:59'), n = new Date();
+    return Math.ceil((b - n) / 86400000);
+  }
+  function once(t) {
+    if (!t) return '';
+    const d = Math.round((Date.now() - new Date(t).getTime()) / 60000);
+    if (isNaN(d)) return '';
+    return d < 1 ? 'az önce' : d < 60 ? d + ' dk önce' : d < 1440 ? Math.round(d / 60) + ' saat önce' : new Date(t).toLocaleDateString('tr-TR');
+  }
+
+  function ciz(k) {
+    if (/^#[0-9a-fA-F]{6}$/.test(k.renk || '')) document.documentElement.style.setProperty('--a', k.renk);
+    document.title = (k.baslik || 'Bağış kampanyası') + (k.kurum ? ' · ' + k.kurum : '');
+    const hedef = +k.hedef || 0, top = +k.toplanan || 0, yuzde = hedef ? Math.min(100, Math.round(top / hedef * 100)) : 0;
+    const gun = kalanGun(k.bitis), birim = k.birim || '';
+    const tel = (k.iletisim || '').replace(/[^\d+]/g, '');
+    $('#m').innerHTML = `
+      ${k.kurum || k.logo ? `<div class="kurum">${k.logo ? `<img src="${esc(k.logo)}" alt="">` : ''}<span>${esc(k.kurum || '')}</span></div>` : ''}
+      <section class="kart">
+        ${k.gorsel ? `<img class="gorsel" src="${esc(k.gorsel)}" alt="">` : ''}
+        <h1>${esc(k.baslik || 'Bağış kampanyası')}</h1>
+        <div class="rakam"><b id="say">${fmt(0)}</b><span>${hedef ? '/ ' + fmt(hedef) + ' ' + esc(birim) : esc(birim)}</span></div>
+        ${hedef ? `<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${yuzde}"><i id="bar"></i></div>
+        <div class="alt"><span><b>%${yuzde}</b> tamamlandı</span><span>${gun == null ? '' : gun > 0 ? `<b>${gun}</b> gün kaldı` : gun === 0 ? '<b>Son gün</b>' : 'Kampanya sona erdi'}</span></div>` : ''}
+        ${hedef && top >= hedef ? '<span class="tamam">Hedefe ulaşıldı, teşekkürler!</span>' : ''}
+        ${k.adet ? `<div class="alt" style="margin-top:6px"><span><b>${fmt(k.adet)}</b> bağış</span></div>` : ''}
+        ${k.aciklama ? `<p class="aciklama">${esc(k.aciklama)}</p>` : ''}
+      </section>
+      <div class="bilgi">
+        ${k.iban ? `<div class="satir"><div><span class="e">IBAN</span><span class="d">${esc(k.iban)}</span></div><button data-k="${esc(k.iban.replace(/\s/g, ''))}">Kopyala</button></div>` : ''}
+        ${k.iletisim ? `<div class="satir"><div><span class="e">İletişim</span><span class="d">${esc(k.iletisim)}</span></div>${tel.length > 6 ? `<a class="dugme" href="tel:${esc(tel)}">Ara</a>` : ''}</div>` : ''}
+      </div>
+      <button class="ana" id="paylas">Bu kampanyayı paylaş</button>
+      <p class="not">Son güncelleme: ${esc(once(k.guncellendi))} · sayfa kendiliğinden yenilenir</p>`;
+    document.querySelectorAll('[data-k]').forEach((b) => (b.onclick = () => kopyala(b.dataset.k, 'IBAN kopyalandı')));
+    $('#paylas').onclick = async () => {
+      const veri = { title: k.baslik || 'Bağış kampanyası', text: (k.baslik || '') + (hedef ? ` — ${fmt(top)} / ${fmt(hedef)} ${birim}` : ''), url: location.href };
+      try { if (navigator.share) { await navigator.share(veri); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+      kopyala(location.href, 'Bağlantı kopyalandı');
+    };
+    // sayaç ve çubuk canlandırması
+    requestAnimationFrame(() => { const b = $('#bar'); if (b) b.style.width = yuzde + '%'; });
+    const el = $('#say'), t0 = performance.now(), sure = 1100, bas = son && son.slug === k.slug ? +son.toplanan || 0 : 0;
+    const adim = (t) => { const p = Math.min(1, (t - t0) / sure), e = 1 - Math.pow(1 - p, 3); el.textContent = fmt(bas + (top - bas) * e); if (p < 1) requestAnimationFrame(adim); };
+    requestAnimationFrame(adim);
+    son = k;
+  }
+
+  async function yukle() {
+    const s = slug();
+    if (!s) { $('#m').innerHTML = '<div class="bos">Kampanya bulunamadı.<br>Bağlantının sonunda #kampanya-adı olmalı.</div>'; return; }
+    try {
+      const r = await fetch('veri/' + s + '.json?t=' + Date.now(), { cache: 'no-store' });
+      if (!r.ok) throw new Error(r.status);
+      const k = await r.json();
+      if (son && son.guncellendi === k.guncellendi) return;
+      ciz(k);
+    } catch (e) {
+      if (!son) $('#m').innerHTML = '<div class="bos">Kampanya bulunamadı ya da henüz yayımlanmadı.</div>';
+    }
+  }
+  window.addEventListener('hashchange', () => { son = null; yukle(); });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) yukle(); });
+  setInterval(() => { if (!document.hidden) yukle(); }, 60000);
+  yukle();
+})();
+</script>
+</body>
+</html>
