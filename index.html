@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+  <meta name="theme-color" content="#1B1E25">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Stüdyo">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <title>Tasarım Stüdyosu 6.9 · Önizleme</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='11' cy='13' r='8' fill='%2319A9E1' fill-opacity='.9'/%3E%3Ccircle cx='21' cy='13' r='8' fill='%23E2197C' fill-opacity='.9'/%3E%3Ccircle cx='16' cy='21' r='8' fill='%23F2C230' fill-opacity='.9'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="app">
+    <nav class="rail" aria-label="Ana menü">
+      <div class="brand" title="Tasarım Stüdyosu"><i></i><i></i><i></i></div>
+      <button class="nav-btn" data-route="pano"></button>
+      <button class="nav-btn" data-route="studyo"></button>
+      <button class="nav-btn" data-route="editor"></button>
+      <button class="nav-btn" data-route="onizleme"></button>
+      <button class="nav-btn" data-route="marka"></button>
+      <div class="spacer"></div>
+      <button class="rail-help" id="helpBtn" title="Nasıl kullanılır?" aria-label="Nasıl kullanılır?"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M9.3 9.2a2.8 2.8 0 0 1 5.4 1c0 1.9-2.7 2.4-2.7 4.1"/><path d="M12 17.6h.01"/></svg></button>
+      <span class="ai-dot" id="aiDot" title="Yapay zeka durumu"></span>
+      <button class="nav-btn" data-route="ayarlar"></button>
+    </nav>
+    <main id="view"></main>
+  </div>
+  <div id="toasts" aria-live="polite"></div>
+  <input type="file" id="filePick" accept="image/*" multiple hidden>
+  <style>
+#tsOnizleme{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 4px);z-index:99999;
+ background:rgba(226,25,124,.92);color:#fff;font:600 11px/1 Inter,system-ui,sans-serif;padding:5px 10px;border-radius:99px;
+ pointer-events:auto;box-shadow:0 4px 14px rgba(0,0,0,.3);white-space:nowrap}
+#tsOnizleme b{font-weight:800}
+</style>
+<script>window.TS_SURUM='6.9';document.addEventListener('DOMContentLoaded',function(){var d=document.createElement('div');d.id='tsOnizleme';
+d.innerHTML='<b>Önizleme v6.9</b> · veriler bu cihazda';d.title='Dokun: gizle';d.onclick=function(){d.remove()};document.body.appendChild(d);
+setTimeout(function(){d.style.transition='opacity .6s';d.style.opacity='0';setTimeout(function(){d.remove()},700)},6000)});</script>
+<script src="js/bulut.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/tools.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/library.js"></script>
+  <script src="js/food-art.js"></script>
+  <script src="js/food-theme.js"></script>
+  <script src="js/food.js"></script>
+  <script src="js/importers.js"></script>
+  <script src="js/features.js"></script>
+  <script src="js/fontcatalog.js"></script>
+  <script src="js/fonts.js"></script>
+  <script src="js/coach.js"></script>
+  <script src="js/p5-arac-kutusu.js"></script>
+  <script src="js/p6-satis-araclari.js"></script>
+  <script src="js/p7-bagis-kampanya.js"></script>
+  <script src="js/p8-fotograf-paylasim.js"></script>
+  <script src="js/p9-belge-kutuphane.js"></script>
+  <script src="js/p10-vakit-takvim.js"></script>
+  <script src="js/p11-kontrol-basit-mod.js"></script>
+  <script src="js/p12-kurban-defter-esitleme.js"></script>
+  <script src="js/p13-menu-video-ceviri.js"></script>
+  <script src="js/bagis-hedef.js"></script>
+  <script src="js/toplu-gonderim.js"></script>
+  <script src="js/ayar-simgeleri.js"></script>
+  <script src="js/tooltips.js"></script>
+  <script src="js/tour.js"></script>
+  <script src="js/mobile.js"></script>
+  <script src="js/users.js"></script>
+  <script src="js/guncelle.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

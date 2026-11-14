@@ -1,0 +1,804 @@
+[
+ {
+  "family": "Inter",
+  "cat": "sans",
+  "desc": "Modern, çok okunaklı arayüz ve metin fontu",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/inter/inter-100.woff",
+    "weight": 100,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-100i.woff",
+    "weight": 100,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/inter/inter-200.woff",
+    "weight": 200,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-200i.woff",
+    "weight": 200,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/inter/inter-300.woff",
+    "weight": 300,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-300i.woff",
+    "weight": 300,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/inter/inter-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/inter/inter-500.woff",
+    "weight": 500,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-500i.woff",
+    "weight": 500,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/inter/inter-600.woff",
+    "weight": 600,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-600i.woff",
+    "weight": 600,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/inter/inter-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/inter/inter-800.woff",
+    "weight": 800,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-800i.woff",
+    "weight": 800,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/inter/inter-900.woff",
+    "weight": 900,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/inter/inter-900i.woff",
+    "weight": 900,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Poppins",
+  "cat": "sans",
+  "desc": "Geometrik, güçlü başlık ve marka fontu",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/poppins/poppins-300.woff",
+    "weight": 300,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/poppins/poppins-300i.woff",
+    "weight": 300,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/poppins/poppins-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/poppins/poppins-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/poppins/poppins-500.woff",
+    "weight": 500,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/poppins/poppins-500i.woff",
+    "weight": 500,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/poppins/poppins-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/poppins/poppins-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/poppins/poppins-600.woff",
+    "weight": 600,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/poppins/poppins-800.woff",
+    "weight": 800,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/poppins/poppins-900.woff",
+    "weight": 900,
+    "style": "normal"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Lora",
+  "cat": "serif",
+  "desc": "Zarif, okunaklı tırnaklı metin fontu",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/lora/lora-400-700.woff",
+    "weight": "400 700",
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/lora/lora-400-700i.woff",
+    "weight": "400 700",
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Heros",
+  "cat": "sans",
+  "desc": "Helvetica benzeri klasik grotesk",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-heros/tex-gyre-heros-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-heros/tex-gyre-heros-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/tex-gyre-heros/tex-gyre-heros-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-heros/tex-gyre-heros-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Heros Cn",
+  "cat": "sans",
+  "desc": "Helvetica Condensed benzeri dar",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-heros-cn/tex-gyre-heros-cn-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-heros-cn/tex-gyre-heros-cn-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/tex-gyre-heros-cn/tex-gyre-heros-cn-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-heros-cn/tex-gyre-heros-cn-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Adventor",
+  "cat": "sans",
+  "desc": "Avant Garde benzeri geometrik",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-adventor/tex-gyre-adventor-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-adventor/tex-gyre-adventor-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/tex-gyre-adventor/tex-gyre-adventor-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-adventor/tex-gyre-adventor-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Termes",
+  "cat": "serif",
+  "desc": "Times benzeri gazete serif",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-termes/tex-gyre-termes-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-termes/tex-gyre-termes-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/tex-gyre-termes/tex-gyre-termes-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-termes/tex-gyre-termes-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Pagella",
+  "cat": "serif",
+  "desc": "Palatino benzeri zarif serif",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-pagella/tex-gyre-pagella-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-pagella/tex-gyre-pagella-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/tex-gyre-pagella/tex-gyre-pagella-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-pagella/tex-gyre-pagella-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Bonum",
+  "cat": "serif",
+  "desc": "Bookman benzeri yuvarlak serif",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-bonum/tex-gyre-bonum-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-bonum/tex-gyre-bonum-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/tex-gyre-bonum/tex-gyre-bonum-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-bonum/tex-gyre-bonum-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Schola",
+  "cat": "serif",
+  "desc": "Century Schoolbook benzeri",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-schola/tex-gyre-schola-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-schola/tex-gyre-schola-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/tex-gyre-schola/tex-gyre-schola-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-schola/tex-gyre-schola-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Chorus",
+  "cat": "script",
+  "desc": "Zapf Chancery benzeri kaligrafik",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-chorus/tex-gyre-chorus-500.woff",
+    "weight": 500,
+    "style": "normal"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "TeX Gyre Cursor",
+  "cat": "mono",
+  "desc": "Daktilo (Courier) benzeri",
+  "license": "GUST",
+  "faces": [
+   {
+    "url": "fontlib/tex-gyre-cursor/tex-gyre-cursor-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-cursor/tex-gyre-cursor-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/tex-gyre-cursor/tex-gyre-cursor-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/tex-gyre-cursor/tex-gyre-cursor-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Carlito",
+  "cat": "sans",
+  "desc": "Calibri ile aynı ölçülerde",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/carlito/carlito-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/carlito/carlito-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/carlito/carlito-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/carlito/carlito-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Caladea",
+  "cat": "serif",
+  "desc": "Cambria ile aynı ölçülerde",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/caladea/caladea-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/caladea/caladea-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/caladea/caladea-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/caladea/caladea-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Liberation Sans",
+  "cat": "sans",
+  "desc": "Arial ile aynı ölçülerde",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/liberation-sans/liberation-sans-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/liberation-sans/liberation-sans-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/liberation-sans/liberation-sans-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/liberation-sans/liberation-sans-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Liberation Serif",
+  "cat": "serif",
+  "desc": "Times New Roman ile aynı ölçülerde",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/liberation-serif/liberation-serif-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/liberation-serif/liberation-serif-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/liberation-serif/liberation-serif-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/liberation-serif/liberation-serif-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Liberation Mono",
+  "cat": "mono",
+  "desc": "Courier New ile aynı ölçülerde",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/liberation-mono/liberation-mono-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/liberation-mono/liberation-mono-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   },
+   {
+    "url": "fontlib/liberation-mono/liberation-mono-700.woff",
+    "weight": 700,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/liberation-mono/liberation-mono-700i.woff",
+    "weight": 700,
+    "style": "italic"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "GFS Baskerville",
+  "cat": "serif",
+  "desc": "Klasik Baskerville kitap serif",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/gfs-baskerville/gfs-baskerville-400.woff",
+    "weight": 400,
+    "style": "normal"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Ms Madi",
+  "cat": "script",
+  "desc": "İmza gibi ince el yazısı",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/msmadi/ms-madi-400.woff",
+    "weight": 400,
+    "style": "normal"
+   }
+  ]
+ },
+ {
+  "family": "Oswald",
+  "cat": "display",
+  "desc": "Dar, güçlü başlık ve alıntı",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/oswald/oswald-200-700.woff",
+    "weight": "200 700",
+    "style": "normal"
+   }
+  ]
+ },
+ {
+  "family": "Montserrat",
+  "cat": "sans",
+  "desc": "Geometrik, güçlü başlıklar",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/montserrat/montserrat-100-900.woff",
+    "weight": "100 900",
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/montserrat/montserrat-100-900i.woff",
+    "weight": "100 900",
+    "style": "italic"
+   }
+  ]
+ },
+ {
+  "family": "DM Serif Display",
+  "cat": "serif",
+  "desc": "Zarif, kontrastlı başlık",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/dm-serif-display/dm-serif-display-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/dm-serif-display/dm-serif-display-400i.woff",
+    "weight": 400,
+    "style": "italic"
+   }
+  ]
+ },
+ {
+  "family": "Playfair Display",
+  "cat": "serif",
+  "desc": "Klasik, şık başlık",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/playfair-display/playfair-display-400-900.woff",
+    "weight": "400 900",
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/playfair-display/playfair-display-400-900i.woff",
+    "weight": "400 900",
+    "style": "italic"
+   }
+  ]
+ },
+ {
+  "family": "Crimson Pro",
+  "cat": "serif",
+  "desc": "Okunaklı kitap yazısı",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/crimson-pro/crimson-pro-200-900.woff",
+    "weight": "200 900",
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/crimson-pro/crimson-pro-200-900i.woff",
+    "weight": "200 900",
+    "style": "italic"
+   }
+  ]
+ },
+ {
+  "family": "Cinzel",
+  "cat": "serif",
+  "desc": "Roma kitabesi harfleri",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/cinzel/cinzel-400-900.woff",
+    "weight": "400 900",
+    "style": "normal"
+   }
+  ]
+ },
+ {
+  "family": "Caveat",
+  "cat": "script",
+  "desc": "Doğal el yazısı",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/caveat/caveat-400-700.woff",
+    "weight": "400 700",
+    "style": "normal"
+   }
+  ]
+ },
+ {
+  "family": "Kaushan Script",
+  "cat": "script",
+  "desc": "Fırça el yazısı",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/kaushan-script/kaushan-script-400.woff",
+    "weight": 400,
+    "style": "normal"
+   }
+  ]
+ },
+ {
+  "family": "Alex Brush",
+  "cat": "script",
+  "desc": "Zarif bağlı el yazısı",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/alex-brush/alex-brush-400.woff",
+    "weight": 400,
+    "style": "normal"
+   }
+  ]
+ },
+ {
+  "family": "Archivo Black",
+  "cat": "display",
+  "desc": "Kalın, dikkat çekici",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/archivo-black/archivo-black-400.woff",
+    "weight": 400,
+    "style": "normal"
+   }
+  ]
+ },
+ {
+  "family": "Amiri",
+  "cat": "arabic",
+  "desc": "Klasik nesih: Arapça ayet, hadis ve dua",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/amiri/amiri-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/amiri/amiri-700.woff",
+    "weight": 700,
+    "style": "normal"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Reem Kufi",
+  "cat": "arabic",
+  "desc": "Kûfî: Arapça başlık ve logo",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/reem-kufi/reem-kufi-400-700.woff",
+    "weight": "400 700",
+    "style": "normal"
+   }
+  ],
+  "bundled": true
+ },
+ {
+  "family": "Aref Ruqaa",
+  "cat": "arabic",
+  "desc": "Rika hattı: Besmele ve dua başlıkları",
+  "license": "OFL",
+  "faces": [
+   {
+    "url": "fontlib/aref-ruqaa/aref-ruqaa-400.woff",
+    "weight": 400,
+    "style": "normal"
+   },
+   {
+    "url": "fontlib/aref-ruqaa/aref-ruqaa-700.woff",
+    "weight": 700,
+    "style": "normal"
+   }
+  ],
+  "bundled": true
+ }
+]
